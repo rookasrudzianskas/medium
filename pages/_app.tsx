@@ -1,8 +1,13 @@
 import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import { MediumProvider } from '../context/MediumContext'
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+// @ts-ignore
+function MyApp({ Component, pageProps }) {
+  return (
+      <MediumProvider>
+        <Component {...pageProps} />
+      </MediumProvider>
+  )
 }
 
 export default MyApp
