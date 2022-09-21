@@ -10,8 +10,22 @@ const styles = {
     smallField: `w-full flex justify-between gap-[1rem]`,
     largeField: ``,
     fieldTitle: `flex-1 text-end`,
-    inputContainer: `flex-[5] h-min border-2 border-[#787878]`,
-    inputField: `w-full border-0 outline-none bg-transparent`,
+    inputContainer: `flex-[5]`,
+    inputField: ` form-control
+          block
+          w-full
+          px-4
+          py-2
+          text-xl
+          font-normal
+          text-gray-700
+          bg-white bg-clip-padding
+          border border-solid border-gray-300
+          rounded
+          transition
+          ease-in-out
+          m-0
+          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none`,
     accentedButton: `bg-black text-white py-2 px-4 rounded-full`,
 }
 
