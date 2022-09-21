@@ -36,10 +36,39 @@ const PostCard = ({}) => {
                     <div className={styles.authorName}>Rokas Rudzianskas</div>
                 </div>
                 <h1 className={styles.title}>7 free tools that Will Make you more Productive in 2022</h1>
-                <p className={styles.briefing}>
+                <div className={styles.briefing}>
                     Productivity is a key to success. It is the ability to do more in less time. It is the ability to do more in less time.
-                </p>
+                </div>
+                <div className={styles.detailsContainer}>
+                    <span className={styles.articleDetails}>
+                      {/*{new Date(post.data.postedOn).toLocaleString('en-US', {*/}
+                      {/*    day: 'numeric',*/}
+                      {/*    month: 'short',*/}
+                      {/*})}*/}
+                        Jun 15
+                        •
+                        {/*{post.data.postLength}*/}
+                        14 min read •{' '}
+                        <span className={styles.category}>
+                            Productivity
+                            {/*{post.data.category}*/}
+                        </span>
+                    </span>
+                    <span className={styles.bookmarkContainer}>
+                {/*<FiBookmark className='h-5 w-5' />*/}
+            </span>
+                </div>
+
             </div>
+                <div className={styles.thumbnailContainer}>
+                    <Image
+                        // src={`https://res.cloudinary.com/demo/image/fetch/${post.data.bannerImage}`}
+                        src={"https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tfGVufDB8fDB8fA%3D%3D&w=1000&q=80"}
+                        alt='thumbnail'
+                        height={100}
+                        width={100}
+                    />
+                </div>
         </div>
     );
 };
