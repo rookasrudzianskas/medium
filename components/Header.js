@@ -6,9 +6,10 @@ import { useContext, useState } from 'react'
 // import UploadModal from './UploadModal'
 import Logo from '../static/logo.png'
 import {MediumContext} from "../context/MediumContext";
-// import Modal from 'react-modal'
+import UploadModal from "./UploadModal";
+import Modal from 'react-modal'
 
-// Modal.setAppElement('#__next')
+Modal.setAppElement('#__next')
 
 const customStyles = {
     content: {
@@ -77,13 +78,13 @@ const Header = ({}) => {
                     )}
                 </div>
             </div>
-            {/*<Modal*/}
-            {/*    isOpen={!!router.query.addNew}*/}
-            {/*    onRequestClose={() => router.push('/')}*/}
-            {/*    style={customStyles}*/}
-            {/*>*/}
-            {/*    /!*<UploadModal />*!/*/}
-            {/*</Modal>*/}
+            <Modal
+                isOpen={!!router.query.addNew}
+                onRequestClose={() => router.push('/')}
+                style={customStyles}
+            >
+                <UploadModal />
+            </Modal>
         </div>
     );
 };
