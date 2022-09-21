@@ -52,7 +52,7 @@ const UploadModal = () => {
             postLength: Number(postLength),
             title: title,
             author: user.email,
-        })
+        });
 
         router.push('/');
     }
