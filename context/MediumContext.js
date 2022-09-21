@@ -83,8 +83,6 @@ export const MediumProvider = ({ children }) => {
 
 
 
-
-
     return (
         <MediumContext.Provider
             value={{ user, handleUserAuth, allPosts, allUsers }}

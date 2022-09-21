@@ -7,6 +7,7 @@ import ReplitLogo from '../static/replit.png'
 import Rokas from '../static/profile.jpeg'
 import RokasProfile from '../static/profile.jpeg'
 import JSLogo from '../static/jsLogo.png'
+import {MediumContext} from "../context/MediumContext";
 
 const styles = {
     wrapper: `h-screen min-w-[10rem] max-w-[30rem] flex-[1.2] p-[2rem]`,
@@ -33,7 +34,7 @@ const styles = {
 }
 
 const Recommendations = ({ author }) => {
-    // const { allPosts } = useContext(MediumContext)
+    const { allPosts } = useContext(MediumContext)
 
     return (
         <div className={styles.wrapper}>

@@ -5,6 +5,7 @@ import { useContext, useState } from 'react'
 // import { MediumContext } from '../context/MediumContext'
 // import UploadModal from './UploadModal'
 import Logo from '../static/logo.png'
+import {MediumContext} from "../context/MediumContext";
 // import Modal from 'react-modal'
 
 // Modal.setAppElement('#__next')
@@ -37,7 +38,7 @@ const styles = {
 const Header = ({}) => {
     const [isModalOpen, setIsModalOpen] = useState(false)
     const router = useRouter()
-    // const { user, handleUserAuth } = useContext(MediumContext)
+    const { user, handleUserAuth } = useContext(MediumContext)
 
 
 
@@ -57,7 +58,7 @@ const Header = ({}) => {
                     <div>Our Story</div>
                     <div>Membership</div>
                     {/* USER */}
-                    {true ? (
+                    {user ? (
                         <>
                             <Link href={'/?addNew=1'}>
                                 <div className={styles.accentedButton}>Write</div>
