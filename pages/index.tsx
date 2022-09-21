@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Header from '../components/Header';
 import Banner from '../components/Banner';
+import PostCard from '../components/PostCard';
 
 const styles = {
     wrapper: `mx-auto`,
@@ -21,15 +22,15 @@ const Home: NextPage = () => {
           <Header />
           <main>
               <Banner />
-              {/*<div className={styles.main}>*/}
-              {/*    <div className={styles.container}>*/}
-              {/*        <div className={styles.postsList}>*/}
-              {/*            {allPosts.map(post => (*/}
-              {/*                <PostCard post={post} key={post.id} />*/}
-              {/*            ))}*/}
-              {/*        </div>*/}
-              {/*    </div>*/}
-              {/*</div>*/}
+              <div className={styles.main}>
+                  <div className={styles.container}>
+                      <div className={styles.postsList}>
+                          {/*{allPosts.map(post => (*/}
+                              <PostCard post={'Rokas'} key={"Rokas"} />
+                          {/*))}*/}
+                      </div>
+                  </div>
+              </div>
           </main>
       </div>
   )
