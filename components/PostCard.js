@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Image from "next/image";
+import {FiBookmark} from "react-icons/all";
 
 
 const styles = {
@@ -55,7 +56,7 @@ const PostCard = ({}) => {
                         </span>
                     </span>
                     <span className={styles.bookmarkContainer}>
-                {/*<FiBookmark className='h-5 w-5' />*/}
+                <FiBookmark className='h-5 w-5' />
             </span>
                 </div>
 
