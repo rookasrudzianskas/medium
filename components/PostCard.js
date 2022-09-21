@@ -35,6 +35,10 @@ const PostCard = ({}) => {
                     </div>
                     <div className={styles.authorName}>Rokas Rudzianskas</div>
                 </div>
+                <h1 className={styles.title}>7 free tools that Will Make you more Productive in 2022</h1>
+                <p className={styles.briefing}>
+                    Productivity is a key to success. It is the ability to do more in less time. It is the ability to do more in less time.
+                </p>
             </div>
         </div>
     );
