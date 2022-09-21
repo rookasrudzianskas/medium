@@ -39,7 +39,7 @@ const Post = () => {
             </Head>
             <main className={styles.content}>
                 <ReadersNav />
-                {/*<ArticleMain post={'Rokas'} author={'Rokas'} />*/}
+                <ArticleMain post={'Rokas'} author={'Rokas'} />
                 <Recommendations author={'Rokas'} />
             </main>
         </>
