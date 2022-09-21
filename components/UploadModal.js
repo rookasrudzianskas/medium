@@ -40,7 +40,7 @@ const UploadModal = () => {
     const [bannerImage, setBannerImage] = useState('');
     const [body, setBody] = useState('');
 
-    const uploadPost = async event => {
+    const uploadPost = async (event) => {
         event.preventDefault();
 
         await addDoc(collection(db, 'articles'), {
