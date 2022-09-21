@@ -4,10 +4,8 @@ import { useContext } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { MdMarkEmailUnread } from 'react-icons/md'
 import ReplitLogo from '../static/replit.png'
-import TutorialImg from '../static/tutorial.jpg'
 import Rokas from '../static/profile.jpeg'
 import RokasProfile from '../static/profile.jpeg'
-import Qazi from '../static/qazi.jpg'
 import JSLogo from '../static/jsLogo.png'
 
 const styles = {
