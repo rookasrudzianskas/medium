@@ -51,7 +51,7 @@ const UploadModal = () => {
             postedOn: serverTimestamp(),
             postLength: Number(postLength),
             title: title,
-            author: user.email,
+            author: 'rokas@byrookas.com',
         });
 
         router.push('/');
