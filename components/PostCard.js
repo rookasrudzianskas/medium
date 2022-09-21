@@ -1,5 +1,8 @@
-import React, {useState} from 'react';
-import Image from "next/image";
+import Image from 'next/image'
+import Link from 'next/link'
+import { useState, useEffect } from 'react'
+import { doc, getDoc } from 'firebase/firestore'
+import db from '../firebase'
 import { FiBookmark } from 'react-icons/fi'
 
 
@@ -19,58 +22,63 @@ const styles = {
     thumbnailContainer: `flex-1`,
 }
 
-const PostCard = ({}) => {
-    const [authorData, setAuthorData] = useState(null)
+const PostCard = ({post}) => {
+    const [authorData, setAuthorData] = useState(null);
+
+    useEffect(() => {
+        const getAuthorData = async () => {
+            setAuthorData(
+                await (await getDoc(doc(db, 'users', post.data.author))).data(),
+            )
+        }
+
+        getAuthorData()
+    }, [post]);
 
     return (
-        <div className={styles.wrapper}>
-            <div className={styles.postDetails}>
-                <div className={styles.authorContainer}>
-                    <div className={styles.authorImageContainer}>
-                        <Image
-                            src={'https://avatars.githubusercontent.com/u/38469892?v=4'}
-                            width={40}
-                            height={40}
-                            className={styles.authorImage}
-                        />
+        <Link href={`/post/${post.id}`}>
+            <div className={styles.wrapper}>
+                <div className={styles.postDetails}>
+                    <div className={styles.authorContainer}>
+                        <div className={styles.authorImageContainer}>
+                            {authorData && (
+                                <Image
+                                    src={`https://avatars.githubusercontent.com/u/38469892?v=4`}
+                                    alt='author'
+                                    className={styles.authorImage}
+                                    height={40}
+                                    width={40}
+                                />
+                            )}
+                        </div>
+                        <div className={styles.authorName}>{authorData?.name}</div>
                     </div>
-                    <div className={styles.authorName}>Rokas Rudzianskas</div>
-                </div>
-                <h1 className={styles.title}>7 free tools that Will Make you more Productive in 2022</h1>
-                <div className={styles.briefing}>
-                    Productivity is a key to success. It is the ability to do more in less time. It is the ability to do more in less time.
-                </div>
-                <div className={styles.detailsContainer}>
-                    <span className={styles.articleDetails}>
-                      {/*{new Date(post.data.postedOn).toLocaleString('en-US', {*/}
-                      {/*    day: 'numeric',*/}
-                      {/*    month: 'short',*/}
-                      {/*})}*/}
-                        Jun 15
-                        •
-                        {/*{post.data.postLength}*/}
-                        14 min read •{' '}
-                        <span className={styles.category}>
-                            Productivity
-                            {/*{post.data.category}*/}
-                        </span>
-                    </span>
-                    <span className={styles.bookmarkContainer}>
-                <FiBookmark className='h-5 w-5' />
+                    <h1 className={styles.title}>{post.data.title}</h1>
+                    <div className={styles.briefing}>{post.data.brief}</div>
+                    <div className={styles.detailsContainer}>
+            <span className={styles.articleDetails}>
+              {new Date(post.data.postedOn).toLocaleString('en-US', {
+                  day: 'numeric',
+                  month: 'short',
+              })}
+                • {post.data.postLength} min read •{' '}
+                <span className={styles.category}>{post.data.category}</span>
             </span>
+                        <span className={styles.bookmarkContainer}>
+              <FiBookmark className='h-5 w-5' />
+            </span>
+                    </div>
                 </div>
-
-            </div>
                 <div className={styles.thumbnailContainer}>
                     <Image
-                        // src={`https://res.cloudinary.com/demo/image/fetch/${post.data.bannerImage}`}
-                        src={"https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tfGVufDB8fDB8fA%3D%3D&w=1000&q=80"}
+                        src={`https://avatars.githubusercontent.com/u/38469892?v=4`}
                         alt='thumbnail'
                         height={100}
                         width={100}
                     />
                 </div>
-        </div>
+            </div>
+        </Link>
     );
 };
 
