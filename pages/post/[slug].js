@@ -4,6 +4,7 @@ import { useState, useContext, useEffect } from 'react'
 // import { MediumContext } from '../../context/MediumContext'
 import ReadersNav from '../../components/ReadersNav'
 import ArticleMain from "../../components/ArticleMain";
+import Recommendations from "../../components/Recommendations";
 // import ArticleMain from '../../components/ArticleMain'
 // import Recommendations from '../../components/Recommendations'
 
@@ -38,8 +39,8 @@ const Post = () => {
             </Head>
             <main className={styles.content}>
                 <ReadersNav />
-                <ArticleMain post={'Rokas'} author={'Rokas'} />
-                {/*<Recommendations author={'Rokas'} />*/}
+                {/*<ArticleMain post={'Rokas'} author={'Rokas'} />*/}
+                <Recommendations author={'Rokas'} />
             </main>
         </>
     )
