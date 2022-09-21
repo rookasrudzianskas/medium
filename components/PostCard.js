@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Image from "next/image";
-import {FiBookmark} from "react-icons/all";
+import { FiBookmark } from 'react-icons/fi'
 
 
 const styles = {
