@@ -11,8 +11,8 @@ import Author from '../static/author.jpg'
 import Thumbnail from '../static/thumbnail.webp'
 
 const styles = {
-    wrapper: `flex items-center justify-center flex-[3] border-l border-r w-full `,
-    content: `h-screen overflow-scroll p-[2rem] w-full`,
+    wrapper: `flex items-center justify-center flex-[3] border-l border-r `,
+    content: `h-screen overflow-scroll p-[2rem]`,
     referencesContainer: `flex justify-between items-center mt-[2.2rem] mb-[1.2rem]`,
     authorContainer: `flex gap-[1rem]`,
     authorProfileImageContainer: `h-[3rem] w-[3rem] grid center rounded-full overflow-hidden`,
@@ -40,7 +40,7 @@ const ArticleMain = ({ post, author }) => {
                                 <div className={styles.authorProfileImageContainer}>
                                     <Image
                                         className={styles.image}
-                                        src={`https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tfGVufDB8fDB8fA%3D%3D&w=1000&q=80`}
+                                        src={`https://res.cloudinary.com/demo/image/fetch/${author[0].data.imageUrl}`}
                                         alt='author'
                                         width={100}
                                         height={100}
@@ -50,15 +50,14 @@ const ArticleMain = ({ post, author }) => {
                                     <div>{author[0].data?.name}</div>
                                     <div className={styles.postDetails}>
                     <span>
-                      {/*{new Date(post[0].data?.postedOn).toLocaleString(*/}
-                      {/*    'en-US',*/}
-                      {/*    {*/}
-                      {/*        day: 'numeric',*/}
-                      {/*        month: 'short',*/}
-                      {/*    },*/}
-                      {/*)}{' '}*/}
-                        Jun 14
-                        • {post[0]?.data?.postLength} 14 min read •
+                      {new Date(post[0].data?.postedOn).toLocaleString(
+                          'en-US',
+                          {
+                              day: 'numeric',
+                              month: 'short',
+                          },
+                      )}{' '}
+                        • {post[0].data?.postLength} min read •
                     </span>
                                         <span className={styles.listenButton}>
                       <AiFillPlayCircle /> Listen
@@ -80,7 +79,7 @@ const ArticleMain = ({ post, author }) => {
                             <div className={styles.bannerContainer}>
                                 <Image
                                     className={styles.image}
-                                    src={`https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tfGVufDB8fDB8fA%3D%3D&w=1000&q=80`}
+                                    src={`https://res.cloudinary.com/demo/image/fetch/${post[0].data.bannerImage}`}
                                     alt='banner'
                                     height={100}
                                     width={100}
@@ -89,42 +88,16 @@ const ArticleMain = ({ post, author }) => {
                             <h1 className={styles.title}>{post[0].data?.title}</h1>
                             <h4 className={styles.subtitle}>
                                 <div>
-                                    {/*{author[0].data?.name},{' '}*/}
-                                    {/*{new Date(post[0].data?.postedOn).toLocaleString('en-US', {*/}
-                                    {/*    day: 'numeric',*/}
-                                    {/*    month: 'short',*/}
-                                    {/*    year: 'numeric',*/}
-                                    {/*})}*/}
-                                    Rokas Rudzianskas Jun 13
+                                    {author[0].data?.name},{' '}
+                                    {new Date(post[0].data?.postedOn).toLocaleString('en-US', {
+                                        day: 'numeric',
+                                        month: 'short',
+                                        year: 'numeric',
+                                    })}
                                 </div>
-                                <div>{post[0]?.data?.brief}</div>
+                                <div>{post[0].data?.brief}</div>
                             </h4>
-                            <div className={styles.articleText}>
-
-                                {post[0]?.data?.body}
-
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-                                molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-                                numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-                                optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
-                                obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam
-                                nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,
-                                tenetur error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit,
-                                quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias eos
-                                sapiente officiis modi at sunt excepturi expedita sint? Sed quibusdam
-                                recusandae alias error harum maxime adipisci amet laborum. Perspiciatis
-                                minima nesciunt dolorem! Officiis iure rerum voluptates a cumque velit
-                                quibusdam sed amet tempora. Sit laborum ab, eius fugit doloribus tenetur
-                                fugiat, temporibus enim commodi iusto libero magni deleniti quod quam
-                                consequuntur! Commodi minima excepturi repudiandae velit hic maxime
-                                doloremque. Quaerat provident commodi consectetur veniam similique ad
-                                earum omnis ipsum saepe, voluptas, hic voluptates pariatur est explicabo
-                                fugiat, dolorum eligendi quam cupiditate excepturi mollitia maiores labore
-                                suscipit quas? Nulla, placeat. Voluptatem quaerat non architecto ab laudantium
-                                modi minima sunt esse temporibus sint culpa, recusandae aliquam numquam
-                                totam ratione voluptas quod exercitationem fuga. Possimus quis earum veniam
-                                quasi aliquam eligendi, placeat qui corporis!
-                            </div>
+                            <div className={styles.articleText}>{post[0].data?.body}</div>
                         </div>
                     </>
                 ) : (

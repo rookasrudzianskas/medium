@@ -43,7 +43,7 @@ const PostCard = ({post}) => {
                         <div className={styles.authorImageContainer}>
                             {authorData && (
                                 <Image
-                                    src={`https://avatars.githubusercontent.com/u/38469892?v=4`}
+                                    src={`https://res.cloudinary.com/demo/image/fetch/${authorData.imageUrl}`}
                                     alt='author'
                                     className={styles.authorImage}
                                     height={40}
@@ -71,7 +71,7 @@ const PostCard = ({post}) => {
                 </div>
                 <div className={styles.thumbnailContainer}>
                     <Image
-                        src={`https://avatars.githubusercontent.com/u/38469892?v=4`}
+                        src={`https://res.cloudinary.com/demo/image/fetch/${post.data.bannerImage}`}
                         alt='thumbnail'
                         height={100}
                         width={100}
