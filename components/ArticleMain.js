@@ -11,8 +11,8 @@ import Author from '../static/author.jpg'
 import Thumbnail from '../static/thumbnail.webp'
 
 const styles = {
-    wrapper: `flex items-center justify-center flex-[3] border-l border-r `,
-    content: `h-screen overflow-scroll p-[2rem]`,
+    wrapper: `flex items-center justify-center flex-[3] border-l border-r w-full `,
+    content: `h-screen overflow-scroll p-[2rem] w-full`,
     referencesContainer: `flex justify-between items-center mt-[2.2rem] mb-[1.2rem]`,
     authorContainer: `flex gap-[1rem]`,
     authorProfileImageContainer: `h-[3rem] w-[3rem] grid center rounded-full overflow-hidden`,
